@@ -6,24 +6,28 @@
 #    By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/23 10:08:21 by preina-g          #+#    #+#              #
-#    Updated: 2022/09/23 11:46:48 by preina-g         ###   ########.fr        #
+#    Updated: 2022/09/26 14:03:37 by preina-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+LIB = ar rcs
 
 NAME = libft.a
 
 SRC = main.c ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_strlen.c ft_strncmp.c ft_tolower.c ft_toupper.c
 
+OBJECTS:= $(SRC:.c=.o)
+
 all: $(NAME)
 
-$(NAME):
-	gcc -Wall -Werror -Wextra -o $(NAME) $(SRC)
+$(NAME): $(OBJECTS) libft.h
+	$(LIB) $(NAME) $(OBJECTS)
 
 clean:
-	/bin/rm -f *.o
+	rm -f *.o
 
 fclean:
-	/bin/rm -f $(NAME)
+	rm -f *.o $(NAME)
 
 re:
 	fclean all
