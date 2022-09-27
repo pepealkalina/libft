@@ -6,7 +6,7 @@
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 10:47:33 by preina-g          #+#    #+#             */
-/*   Updated: 2022/09/23 11:03:51 by preina-g         ###   ########.fr       */
+/*   Updated: 2022/09/26 16:00:35 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	ft_atoi(const char *str)
 	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t'
 		|| str[i] == '\r' || str[i] == '\v' || str[i] == '\f')
 		i++;
-	while (str[i] == '+' || str[i] == '-')
+	if (str[i] == '+' || str[i] == '-')
 	{
 		if (str[i] == '-')
 		{

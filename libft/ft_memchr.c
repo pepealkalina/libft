@@ -6,7 +6,7 @@
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 11:25:09 by preina-g          #+#    #+#             */
-/*   Updated: 2022/09/23 10:33:59 by preina-g         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:05:52 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,18 @@
 
 void	*ft_memchr(const void *str, int c, size_t n)
 {
-	size_t		i;
-	const char	*s;
+	size_t			i;
+	unsigned char	*s;
 
-	s = (char *)str;
+	s = (unsigned char *)str;
 	i = 0;
 	while (i < n)
 	{
-		if (c == s[i])
+		if ((unsigned char)c == s[i])
 		{
 			return ((void *)&str[i]);
 		}
 		i++;
 	}
-	return (0);
+	return (NULL);
 }

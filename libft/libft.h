@@ -6,7 +6,7 @@
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 10:58:34 by preina-g          #+#    #+#             */
-/*   Updated: 2022/09/23 11:02:58 by preina-g         ###   ########.fr       */
+/*   Updated: 2022/09/27 11:20:41 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <stddef.h>
 
 int			ft_atoi(const char *str);
-void		ft_bzero(void *s, size_t n);
+void		*ft_bzero(void *s, size_t n);
 int			ft_isalpha(int argument);
 int			ft_isalnum(int argument);
 int			ft_isascii(int argument);
@@ -28,5 +28,5 @@ int			ft_strncmp(const char *s1, const char *s2, size_t n);
 void		*ft_memcpy(void *to, const void *from, size_t num);
 int			ft_memcmp(const void *str1, const void *str2, size_t n);
 void		*ft_memchr(const void *str, int c, size_t n);
-
+size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 #endif
