@@ -6,12 +6,10 @@
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 11:18:16 by preina-g          #+#    #+#             */
-/*   Updated: 2022/09/26 16:59:31 by preina-g         ###   ########.fr       */
+/*   Updated: 2022/09/28 17:45:38 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
 int	ft_memcmp(const void *str1, const void *str2, size_t n)

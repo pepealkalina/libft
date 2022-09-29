@@ -6,7 +6,7 @@
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 10:58:34 by preina-g          #+#    #+#             */
-/*   Updated: 2022/09/27 11:20:41 by preina-g         ###   ########.fr       */
+/*   Updated: 2022/09/29 14:51:34 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,12 @@ void		*ft_memcpy(void *to, const void *from, size_t num);
 int			ft_memcmp(const void *str1, const void *str2, size_t n);
 void		*ft_memchr(const void *str, int c, size_t n);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t		ft_strlcat(char *dst, const char *src, size_t dstsize);
+void		*ft_memmove(void *str1, const void *str2, size_t n);
+void		*ft_memset(void *s, int c, size_t n);
+char		*ft_strchr(const char *s, int c);
+void		*ft_memccpy(void *dest, const void *orig, int c, size_t n);
+char		*ft_strnstr(const char *str, const char *to_find, size_t len);
+char		*ft_strrchr(const char *str, int c);
+
 #endif

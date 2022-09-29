@@ -6,7 +6,7 @@
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 11:09:25 by preina-g          #+#    #+#             */
-/*   Updated: 2022/09/27 13:55:04 by preina-g         ###   ########.fr       */
+/*   Updated: 2022/09/28 17:52:09 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t	i;
 	size_t	len;
 
-	if (dstsize > 0)
+	if (dstsize != 0)
 	{
+		len = ft_strlen(src);
 		i = 0;
 		while (i < len && i < (dstsize - 1))
 		{
@@ -27,6 +28,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		}
 		dst[i] = '\0';
 	}
-	len = ft_strlen(src);
+	else
+		len = ft_strlen(src);
 	return (len);
 }
