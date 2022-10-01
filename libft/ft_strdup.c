@@ -1,37 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 12:33:30 by preina-g          #+#    #+#             */
-/*   Updated: 2022/09/29 15:27:32 by preina-g         ###   ########.fr       */
+/*   Created: 2022/09/29 15:47:12 by preina-g          #+#    #+#             */
+/*   Updated: 2022/09/29 17:37:32 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+char	*ft_strdup(const char *s)
 {
-	int	i;
-	int	j;
+	char	*array;
+	size_t	size;
+	size_t	i;
 
-	if (to_find[0] == '\0')
-		return ((char *)str);
 	i = 0;
-	while (str[i] != '\0')
+	size = ft_strlen(s);
+	array = (char *)malloc(sizeof(char) * (size + 1));
+	if (array == NULL)
+		return (NULL);
+	while (i < size + 1)
 	{
-		j = 0;
-		while (str[i + j] != '\0' && str[i + j] == to_find[j] && (i + j) < len)
-		{
-			if (to_find[j + 1] == '\0')
-			{
-				return ((char *)&str[i]);
-			}
-			j++;
-		}
+		array[i] = s[i];
 		i++;
 	}
-	return (0);
+	return (array);
 }

@@ -6,11 +6,10 @@
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 11:25:09 by preina-g          #+#    #+#             */
-/*   Updated: 2022/09/27 11:05:52 by preina-g         ###   ########.fr       */
+/*   Updated: 2022/10/01 17:48:52 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 void	*ft_memchr(const void *str, int c, size_t n)

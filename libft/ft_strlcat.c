@@ -6,25 +6,35 @@
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 15:35:17 by preina-g          #+#    #+#             */
-/*   Updated: 2022/09/29 11:18:59 by preina-g         ###   ########.fr       */
+/*   Updated: 2022/09/29 17:19:54 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h" 
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	dlen;
-	size_t	slen;
+	char	*s;
+	size_t	len_dst;
+	size_t	res;
+	size_t	len_src;
 	size_t	i;
 
-	dlen = ft_strlen(dst);
-	slen = ft_strlen(src);
-	i = dlen;
-	if (dstsize <= dlen)
-		return (slen + dstsize);
-	while (src[i] != '\0' && i < (dstsize - 1))
-		dst[i++] = *src++;
-	dst[i] = '\0';
-	return (slen + dlen);
+	s = (char *)src;
+	len_dst = ft_strlen(dst);
+	len_src = ft_strlen(s);
+	res = 0;
+	i = 0;
+	if (size > len_dst)
+		res = len_src + len_dst;
+	else
+		res = len_src + size;
+	while (s[i] && (len_dst + 1) < size)
+	{
+		dst[len_dst] = s[i];
+		len_dst++;
+		i++;
+	}
+	dst[len_dst] = '\0';
+	return (res);
 }

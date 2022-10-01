@@ -1,37 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 12:33:30 by preina-g          #+#    #+#             */
-/*   Updated: 2022/09/29 15:27:32 by preina-g         ###   ########.fr       */
+/*   Created: 2022/09/30 13:31:57 by preina-g          #+#    #+#             */
+/*   Updated: 2022/09/30 14:05:37 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int	j;
+	char			*nstr;
+	unsigned int	i;
+	unsigned int	a;
+	unsigned int	b;
 
-	if (to_find[0] == '\0')
-		return ((char *)str);
+	a = ft_strlen(s1);
+	b = ft_strlen(s2);
+	if (!s1 && !s2)
+		return (NULL);
+	nstr = (char *)malloc(sizeof(char) * (a + b + 1));
+	if (!nstr)
+		return (NULL);
 	i = 0;
-	while (str[i] != '\0')
+	while (a--)
 	{
-		j = 0;
-		while (str[i + j] != '\0' && str[i + j] == to_find[j] && (i + j) < len)
-		{
-			if (to_find[j + 1] == '\0')
-			{
-				return ((char *)&str[i]);
-			}
-			j++;
-		}
+		nstr[i] = s1[i];
 		i++;
 	}
-	return (0);
+	a = i;
+	i = 0;
+	while (b--)
+		nstr[a++] = s2[i++];
+	nstr[a] = '\0';
+	return (nstr);
 }

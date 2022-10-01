@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 12:33:30 by preina-g          #+#    #+#             */
-/*   Updated: 2022/09/29 15:27:32 by preina-g         ###   ########.fr       */
+/*   Created: 2022/09/29 17:25:08 by preina-g          #+#    #+#             */
+/*   Updated: 2022/10/01 16:31:55 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	int	i;
-	int	j;
+	char	*substr;
+	size_t	i;
 
-	if (to_find[0] == '\0')
-		return ((char *)str);
-	i = 0;
-	while (str[i] != '\0')
+	if (!s)
+		return (NULL);
+	if (start + len > ft_strlen(s))
+		len = ft_strlen(s) - start;
+	if (len == 0 || start > ft_strlen(s))
+		return (ft_strdup(""));
+	substr = (char *)malloc((len + 1) * sizeof(char));
+	if (!substr)
+		return (NULL);
 	{
-		j = 0;
-		while (str[i + j] != '\0' && str[i + j] == to_find[j] && (i + j) < len)
+		i = 0;
+		while (len--)
 		{
-			if (to_find[j + 1] == '\0')
-			{
-				return ((char *)&str[i]);
-			}
-			j++;
+			substr[i] = s[start];
+			i++;
+			start++;
 		}
-		i++;
 	}
-	return (0);
+	substr[i] = '\0';
+	return (substr);
 }
