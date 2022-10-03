@@ -6,7 +6,7 @@
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:00:34 by preina-g          #+#    #+#             */
-/*   Updated: 2022/10/02 13:22:05 by preina-g         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:34:22 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,9 @@ char	**ft_split(char const *s, char c)
 	words = ft_words_count(s, c);
 	separated_str = (char **)malloc(sizeof(char *) * (words + 1));
 	if (!separated_str)
+	{
+		free(separated_str);
 		return (NULL);
+	}
 	return (ft_make_split(separated_str, s, c, words));
 }
