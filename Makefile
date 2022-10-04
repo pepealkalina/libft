@@ -6,7 +6,7 @@
 #    By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/23 10:08:21 by preina-g          #+#    #+#              #
-#    Updated: 2022/10/04 16:27:45 by preina-g         ###   ########.fr        #
+#    Updated: 2022/10/04 17:46:18 by preina-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,11 +34,9 @@ all: $(NAME)
 
 $(NAME): $(OBJECTS) $(INCLUDE)
 	$(LIB) $(NAME) $(OBJECTS)
-	$(CC) $(CCFLAGS) $(SRC)
 
 bonus: $(OBJECTS) $(BONUSOBJ) $(INCLUDE)
 	$(LIB) $(NAME) $(BONUSOBJ) $(OBJECTS)
-	$(CC) $(CCFLAGS) $(SRC) $(BONUSSRC)
 
 %.o: %.c
 	$(CC) $(CCFLAGS) -c -o $@ $<
@@ -49,8 +47,8 @@ clean:
 fclean:
 	rm -f *.o $(NAME)
 
-re:
-	fclean all
+re:	fclean all
+	
 
-rebonus:
-	fclean all
+rebonus: fclean all
+	
