@@ -6,7 +6,7 @@
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 17:48:58 by preina-g          #+#    #+#             */
-/*   Updated: 2022/10/03 13:02:14 by preina-g         ###   ########.fr       */
+/*   Updated: 2022/10/04 12:35:47 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ static char	*ft_writenum(int n, int i, char *numstr, int len)
 		}
 		i--;
 	}
+	return (0);
 }
 
 char	*ft_itoa(int n)

@@ -6,7 +6,7 @@
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 10:58:34 by preina-g          #+#    #+#             */
-/*   Updated: 2022/10/03 20:21:28 by preina-g         ###   ########.fr       */
+/*   Updated: 2022/10/04 10:52:19 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,10 @@ t_list		*ft_lstnew(void *content);
 void		ft_lstadd_front(t_list **lst, t_list *new);
 int			ft_lstsize(t_list *lst);
 t_list		*ft_lstlast(t_list *lst);
-//void		ft_lstadd_back(t_list **lst, t_list *new);
-//void		ft_lstdelone(t_list *lst, void (*del)(void*));
-//void		ft_lstclear(t_list **lst, void (*del)(void*));
-//void		ft_lstiter(t_list *lst, void (*f)(void *));
-//t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+void		ft_lstadd_back(t_list **lst, t_list *new);
+void		ft_lstdelone(t_list *lst, void (*del)(void*));
+void		ft_lstclear(t_list **lst, void (*del)(void*));
+void		ft_lstiter(t_list *lst, void (*f)(void *));
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 
 #endif

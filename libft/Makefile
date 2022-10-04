@@ -6,7 +6,7 @@
 #    By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/23 10:08:21 by preina-g          #+#    #+#              #
-#    Updated: 2022/10/03 20:20:47 by preina-g         ###   ########.fr        #
+#    Updated: 2022/10/04 12:32:58 by preina-g         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,13 @@ ft_striteri.c ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
 OBJECTS:= $(SRC:.c=.o)
 
-BONUSSRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c
+BONUSSRC = ft_lstnew_bonus.c ft_lstadd_front_bonus.c ft_lstsize_bonus.c ft_lstlast_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c
 
 BONUSOBJ = $(BONUSSRC:.c=.o)
+
+CC = gcc
+
+CCFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
@@ -32,6 +36,9 @@ $(NAME): $(OBJECTS) libft.h
 bonus: $(OBJECTS) $(BONUSOBJ) libft.h
 	$(LIB) $(NAME) $(BONUSOBJ) $(OBJECTS)
 
+%.o: %.c
+	$(CC) $(CCFLAGS) -c -o $@ $<
+
 clean:
 	rm -f *.o
 
@@ -39,4 +46,7 @@ fclean:
 	rm -f *.o $(NAME)
 
 re:
+	fclean all
+
+rebonus:
 	fclean all

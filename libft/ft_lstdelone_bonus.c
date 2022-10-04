@@ -1,37 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/29 12:33:30 by preina-g          #+#    #+#             */
-/*   Updated: 2022/10/04 12:34:29 by preina-g         ###   ########.fr       */
+/*   Created: 2022/10/04 10:03:46 by preina-g          #+#    #+#             */
+/*   Updated: 2022/10/04 10:12:02 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *str, const char *to_find, size_t len)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	size_t	i;
-	size_t	j;
-
-	if (to_find[0] == '\0')
-		return ((char *)str);
-	i = 0;
-	while (str[i] != '\0')
-	{
-		j = 0;
-		while (str[i + j] != '\0' && str[i + j] == to_find[j] && (i + j) < len)
-		{
-			if (to_find[j + 1] == '\0')
-			{
-				return ((char *)&str[i]);
-			}
-			j++;
-		}
-		i++;
-	}
-	return (0);
+	if (!lst)
+		return ;
+	if (lst != NULL)
+		del(lst->content);
+	free (lst);
 }

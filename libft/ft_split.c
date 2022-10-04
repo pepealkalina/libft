@@ -6,7 +6,7 @@
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:00:34 by preina-g          #+#    #+#             */
-/*   Updated: 2022/10/03 16:34:22 by preina-g         ###   ########.fr       */
+/*   Updated: 2022/10/04 12:35:13 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static size_t	ft_wordlen(const char *str, char c, int i)
 	return (len);
 }
 
-static char	*ft_free(const char **str, size_t i)
+static char	**ft_free(const char **str, size_t i)
 {
 	while (i < 0)
 	{
