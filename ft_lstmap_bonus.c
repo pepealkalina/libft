@@ -6,13 +6,13 @@
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 10:37:24 by preina-g          #+#    #+#             */
-/*   Updated: 2022/10/04 12:25:52 by preina-g         ###   ########.fr       */
+/*   Updated: 2022/10/05 18:26:49 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list	*ft_functionlist(t_list *content, void *(*f)(void *))
+static t_list	*ft_functionlist(t_list *content, void *(*f)(void *))
 {
 	t_list	*prueba;
 
