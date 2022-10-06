@@ -6,7 +6,7 @@
 /*   By: preina-g <preina-g@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 18:00:34 by preina-g          #+#    #+#             */
-/*   Updated: 2022/10/05 13:20:07 by preina-g         ###   ########.fr       */
+/*   Updated: 2022/10/06 11:51:29 by preina-g         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ static size_t	ft_words_count(const char *s, char c)
 
 	i = 0;
 	words = 0;
+	if (s[i] == '\0')
+		return (0);
 	if (s[i] != c)
 	{
 		i++;
